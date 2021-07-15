@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.8.7 on win32)" generated="20210707 14:50:20.431" rpa="false" schemaversion="2">
+<suite id="s1" name="TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP">
+<suite id="s1-s1" name="TC01Verifytestcase" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC01Verifytestcase.robot">
+<test id="s1-s1-t1" name="verify opening of test url">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:50:20.691" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7BCB4C0&gt;</msg>
+<status status="PASS" starttime="20210707 14:50:20.691" endtime="20210707 14:50:20.691"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:20.691" endtime="20210707 14:50:20.691"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:20.691" endtime="20210707 14:50:20.692"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:20.692" endtime="20210707 14:50:20.692"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:20.692" endtime="20210707 14:50:20.692"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:50:20.693" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:50:20.693" endtime="20210707 14:50:22.128"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:20.693" endtime="20210707 14:50:22.128"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:50:22.129" level="INFO">Opening url 'https://rahulshettyacademy.com/seleniumPractise/#/'</msg>
+<status status="PASS" starttime="20210707 14:50:22.128" endtime="20210707 14:50:23.721"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:20.690" endtime="20210707 14:50:23.721"/>
+</kw>
+<kw name="Search bar" library="keyword">
+<arg>${value}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@type='search']</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:23.729" level="INFO">Typing text 'ber' into text field '//input[@type='search']'.</msg>
+<status status="PASS" starttime="20210707 14:50:23.723" endtime="20210707 14:50:24.140"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:23.722" endtime="20210707 14:50:24.141"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210707 14:50:26.143" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210707 14:50:24.142" endtime="20210707 14:50:26.143"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{products}</var>
+<arg>css:h4.product-name</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.160" level="INFO">@{products} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="f9702f4f-ba61-47ee-91c7-26c382867ba5")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20210707 14:50:26.143" endtime="20210707 14:50:26.160"/>
+</kw>
+<for flavor="IN">
+<var>${productname}</var>
+<value>@{products}</value>
+<iter>
+<var name="${productname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="f9702f4f-ba61-47ee-91c7-26c382867ba5")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text}</var>
+<arg>${productname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.182" level="INFO">${Text} = Cucumber - 1 Kg</msg>
+<status status="PASS" starttime="20210707 14:50:26.160" endtime="20210707 14:50:26.183"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:26.183" endtime="20210707 14:50:26.183"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:26.160" endtime="20210707 14:50:26.183"/>
+</iter>
+<iter>
+<var name="${productname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="8102415a-b24e-451d-a59c-a4f8406608d5")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text}</var>
+<arg>${productname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.216" level="INFO">${Text} = Raspberry - 1/4 Kg</msg>
+<status status="PASS" starttime="20210707 14:50:26.184" endtime="20210707 14:50:26.216"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:26.217" endtime="20210707 14:50:26.217"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:26.184" endtime="20210707 14:50:26.217"/>
+</iter>
+<iter>
+<var name="${productname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="c1bb3bd3-c74d-417b-8e07-cc8665800048")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Text}</var>
+<arg>${productname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.263" level="INFO">${Text} = Strawberry - 1/4 Kg</msg>
+<status status="PASS" starttime="20210707 14:50:26.218" endtime="20210707 14:50:26.264"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:26.264" endtime="20210707 14:50:26.265"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:26.217" endtime="20210707 14:50:26.265"/>
+</iter>
+<status status="PASS" starttime="20210707 14:50:26.160" endtime="20210707 14:50:26.265"/>
+</for>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{button}</var>
+<arg>//div[@class='product-action']/button</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.301" level="INFO">@{button} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="41f5b6a8-78c9-4ffa-890e-1d15aa0856e4")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20210707 14:50:26.265" endtime="20210707 14:50:26.302"/>
+</kw>
+<for flavor="IN">
+<var>${buttons}</var>
+<value>@{button}</value>
+<iter>
+<var name="${buttons}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="41f5b6a8-78c9-4ffa-890e-1d15aa0856e4")&gt;</var>
+<kw name="Click Button" library="SeleniumLibrary">
+<var>${addtocart}</var>
+<arg>${buttons}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.303" level="INFO">Clicking button '&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="41f5b6a8-78c9-4ffa-890e-1d15aa0856e4")&gt;'.</msg>
+<msg timestamp="20210707 14:50:26.394" level="INFO">${addtocart} = None</msg>
+<status status="PASS" starttime="20210707 14:50:26.302" endtime="20210707 14:50:26.394"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:26.302" endtime="20210707 14:50:26.394"/>
+</iter>
+<iter>
+<var name="${buttons}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="1e1a1f06-0543-4dea-b129-5e39e46d0c27")&gt;</var>
+<kw name="Click Button" library="SeleniumLibrary">
+<var>${addtocart}</var>
+<arg>${buttons}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.395" level="INFO">Clicking button '&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="1e1a1f06-0543-4dea-b129-5e39e46d0c27")&gt;'.</msg>
+<msg timestamp="20210707 14:50:26.452" level="INFO">${addtocart} = None</msg>
+<status status="PASS" starttime="20210707 14:50:26.394" endtime="20210707 14:50:26.452"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:26.394" endtime="20210707 14:50:26.453"/>
+</iter>
+<iter>
+<var name="${buttons}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="c8d45725-c5ac-4d97-9c23-d909d01053f1")&gt;</var>
+<kw name="Click Button" library="SeleniumLibrary">
+<var>${addtocart}</var>
+<arg>${buttons}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:26.453" level="INFO">Clicking button '&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="c8d45725-c5ac-4d97-9c23-d909d01053f1")&gt;'.</msg>
+<msg timestamp="20210707 14:50:26.517" level="INFO">${addtocart} = None</msg>
+<status status="PASS" starttime="20210707 14:50:26.453" endtime="20210707 14:50:26.517"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:26.453" endtime="20210707 14:50:26.517"/>
+</iter>
+<status status="PASS" starttime="20210707 14:50:26.302" endtime="20210707 14:50:26.517"/>
+</for>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210707 14:50:29.518" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210707 14:50:26.517" endtime="20210707 14:50:29.518"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>css :a.cart-icon</arg>
+<arg>RETURN</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:29.519" level="INFO">Clicking element 'css :a.cart-icon' with RETURN.</msg>
+<status status="PASS" starttime="20210707 14:50:29.518" endtime="20210707 14:50:29.850"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//div[@class='cart-preview active']/div[2]/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:29.850" level="INFO">Clicking button '//div[@class='cart-preview active']/div[2]/button'.</msg>
+<status status="PASS" starttime="20210707 14:50:29.850" endtime="20210707 14:50:29.979"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{postproductname}</var>
+<arg>//p[@class='product-name']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.027" level="INFO">@{postproductname} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="5c380cdf-4920-4d9c-aae2-7975fca33fe1")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20210707 14:50:29.980" endtime="20210707 14:50:30.027"/>
+</kw>
+<for flavor="IN">
+<var>${verfiname}</var>
+<value>@{postproductname}</value>
+<iter>
+<var name="${verfiname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="5c380cdf-4920-4d9c-aae2-7975fca33fe1")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifypage}</var>
+<arg>${verfiname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.072" level="INFO">${verifypage} = Cucumber - 1 Kg</msg>
+<status status="PASS" starttime="20210707 14:50:30.028" endtime="20210707 14:50:30.073"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${verifypage}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:30.074" endtime="20210707 14:50:30.074"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:30.028" endtime="20210707 14:50:30.074"/>
+</iter>
+<iter>
+<var name="${verfiname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="3f652e51-0442-4737-bb7a-7f4854402d7a")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifypage}</var>
+<arg>${verfiname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.091" level="INFO">${verifypage} = Raspberry - 1/4 Kg</msg>
+<status status="PASS" starttime="20210707 14:50:30.075" endtime="20210707 14:50:30.091"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${verifypage}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:30.091" endtime="20210707 14:50:30.092"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:30.075" endtime="20210707 14:50:30.092"/>
+</iter>
+<iter>
+<var name="${verfiname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="d5f820fb-16a8-4f6c-a1b9-1b38c8f86418")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifypage}</var>
+<arg>${verfiname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.109" level="INFO">${verifypage} = Strawberry - 1/4 Kg</msg>
+<status status="PASS" starttime="20210707 14:50:30.092" endtime="20210707 14:50:30.109"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${verifypage}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:30.110" endtime="20210707 14:50:30.110"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:30.092" endtime="20210707 14:50:30.110"/>
+</iter>
+<iter>
+<var name="${verfiname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="0aed5400-e7c6-43e4-a003-78ecb2c4b7b5")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifypage}</var>
+<arg>${verfiname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.125" level="INFO">${verifypage} = </msg>
+<status status="PASS" starttime="20210707 14:50:30.110" endtime="20210707 14:50:30.125"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${verifypage}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:30.125" endtime="20210707 14:50:30.125"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:30.110" endtime="20210707 14:50:30.126"/>
+</iter>
+<iter>
+<var name="${verfiname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="924a8073-437c-46ab-8193-68fb74783d4c")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifypage}</var>
+<arg>${verfiname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.143" level="INFO">${verifypage} = </msg>
+<status status="PASS" starttime="20210707 14:50:30.126" endtime="20210707 14:50:30.143"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${verifypage}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:30.143" endtime="20210707 14:50:30.144"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:30.126" endtime="20210707 14:50:30.144"/>
+</iter>
+<iter>
+<var name="${verfiname}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d9a25647ba9cb8fd970e9e3b9b065942", element="280b09d3-6af3-489a-b38b-f3427476be5b")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${verifypage}</var>
+<arg>${verfiname}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.161" level="INFO">${verifypage} = </msg>
+<status status="PASS" starttime="20210707 14:50:30.144" endtime="20210707 14:50:30.161"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${verifypage}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:50:30.161" endtime="20210707 14:50:30.162"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:30.144" endtime="20210707 14:50:30.162"/>
+</iter>
+<status status="PASS" starttime="20210707 14:50:30.028" endtime="20210707 14:50:30.162"/>
+</for>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{total}</var>
+<arg>//tr/td[5]/p</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210707 14:50:30.191" level="INFO">@{total} = [ ]</msg>
+<status status="PASS" starttime="20210707 14:50:30.162" endtime="20210707 14:50:30.191"/>
+</kw>
+<kw name="Convert To Integer" library="BuiltIn">
+<var>${sum}</var>
+<arg>${sum1}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<msg timestamp="20210707 14:50:30.192" level="INFO">${sum} = 0</msg>
+<status status="PASS" starttime="20210707 14:50:30.191" endtime="20210707 14:50:30.192"/>
+</kw>
+<for flavor="IN">
+<var>${amount}</var>
+<value>@{total}</value>
+<status status="PASS" starttime="20210707 14:50:30.192" endtime="20210707 14:50:30.193"/>
+</for>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:50:30.194" endtime="20210707 14:50:32.820"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:30.193" endtime="20210707 14:50:32.820"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:20.690" endtime="20210707 14:50:32.820"/>
+</test>
+<status status="PASS" starttime="20210707 14:50:20.462" endtime="20210707 14:50:32.821"/>
+</suite>
+<suite id="s1-s2" name="TC02SugarCRMgetdemopage" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC02SugarCRMgetdemopage.robot">
+<test id="s1-s2-t1" name="TC02SugarCRMgetdemopage">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:50:32.835" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7C4D550&gt;</msg>
+<status status="PASS" starttime="20210707 14:50:32.834" endtime="20210707 14:50:32.835"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:32.835" endtime="20210707 14:50:32.835"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:32.835" endtime="20210707 14:50:32.836"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:32.836" endtime="20210707 14:50:32.836"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:32.836" endtime="20210707 14:50:32.837"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:50:32.838" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:50:32.837" endtime="20210707 14:50:34.280"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:32.837" endtime="20210707 14:50:34.280"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:50:34.281" level="INFO">Opening url 'https://www.sugarcrm.com/au/request-demo/'</msg>
+<status status="PASS" starttime="20210707 14:50:34.280" endtime="20210707 14:50:38.095"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:32.834" endtime="20210707 14:50:38.095"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210707 14:50:43.096" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210707 14:50:38.095" endtime="20210707 14:50:43.096"/>
+</kw>
+<kw name="fill form" library="keyword">
+<arg>${firstname}</arg>
+<arg>${lastname}</arg>
+<arg>${businessemail}</arg>
+<arg>${businessphonenumber}</arg>
+<arg>${companyname}</arg>
+<arg>${label1}</arg>
+<arg>${Jobtitle}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//div[@id='field7']/div/input</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:43.102" level="INFO">Typing text 'Vinod' into text field '//div[@id='field7']/div/input'.</msg>
+<status status="PASS" starttime="20210707 14:50:43.101" endtime="20210707 14:50:43.610"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//div[@id='field8']/div/input</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:43.611" level="INFO">Typing text 'Gera' into text field '//div[@id='field8']/div/input'.</msg>
+<status status="PASS" starttime="20210707 14:50:43.610" endtime="20210707 14:50:43.941"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//div[@id='field0']/div/input</arg>
+<arg>${businessemail}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:43.943" level="INFO">Typing text 'vinod.Gera@yaadbusiness.com' into text field '//div[@id='field0']/div/input'.</msg>
+<status status="PASS" starttime="20210707 14:50:43.941" endtime="20210707 14:50:44.611"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//div[@id='field25']/div/input</arg>
+<arg>${businessphonenumber}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:44.613" level="INFO">Typing text '9999296171' into text field '//div[@id='field25']/div/input'.</msg>
+<status status="PASS" starttime="20210707 14:50:44.611" endtime="20210707 14:50:44.981"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//div[@id='field26']/div/input</arg>
+<arg>${Jobtitle}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:44.982" level="INFO">Typing text 'assitand employees' into text field '//div[@id='field26']/div/input'.</msg>
+<status status="PASS" starttime="20210707 14:50:44.981" endtime="20210707 14:50:45.357"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//div[@id='field9']/div/input</arg>
+<arg>${companyname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:50:45.359" level="INFO">Typing text 'india' into text field '//div[@id='field9']/div/input'.</msg>
+<status status="PASS" starttime="20210707 14:50:45.358" endtime="20210707 14:50:45.726"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>//select[@class='element-container form-control mb-2']</arg>
+<arg>${label1}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20210707 14:50:45.728" level="INFO">Selecting options from selection list '//select[@class='element-container form-control mb-2']' by label 1 - 10 employees.</msg>
+<status status="PASS" starttime="20210707 14:50:45.726" endtime="20210707 14:50:46.021"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:43.097" endtime="20210707 14:50:46.021"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210707 14:50:46.199" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210707 14:50:46.022" endtime="20210707 14:50:46.199"/>
+</kw>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:50:46.201" endtime="20210707 14:50:49.107"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:46.200" endtime="20210707 14:50:49.107"/>
+</kw>
+<tag>SugarCRMDEMOPAGE</tag>
+<status status="PASS" starttime="20210707 14:50:32.833" endtime="20210707 14:50:49.107"/>
+</test>
+<status status="PASS" starttime="20210707 14:50:32.823" endtime="20210707 14:50:49.108"/>
+</suite>
+<suite id="s1-s3" name="TC03Frames" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC03Frames.robot">
+<test id="s1-s3-t1" name="TC03 framewwork">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:50:49.125" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7C36D90&gt;</msg>
+<status status="PASS" starttime="20210707 14:50:49.125" endtime="20210707 14:50:49.125"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:49.125" endtime="20210707 14:50:49.126"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:49.126" endtime="20210707 14:50:49.126"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:49.127" endtime="20210707 14:50:49.127"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:50:49.127" endtime="20210707 14:50:49.128"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:50:49.130" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:50:49.129" endtime="20210707 14:50:51.005"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:49.128" endtime="20210707 14:50:51.005"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:50:51.006" level="INFO">Opening url 'https://the-internet.herokuapp.com/'</msg>
+<status status="PASS" starttime="20210707 14:50:51.005" endtime="20210707 14:50:57.929"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:49.125" endtime="20210707 14:50:57.929"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210707 14:51:02.930" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210707 14:50:57.929" endtime="20210707 14:51:02.931"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//a[@href='/frames']</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210707 14:51:02.932" level="INFO">Sending key(s) ('RETURN',) to //a[@href='/frames'] element.</msg>
+<msg timestamp="20210707 14:51:04.853" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210707 14:51:04.853" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210707 14:51:02.931" endtime="20210707 14:51:04.991"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>//a[contains(text(),'iFrame')]</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210707 14:51:04.995" level="INFO">Sending key(s) ('RETURN',) to //a[contains(text(),'iFrame')] element.</msg>
+<msg timestamp="20210707 14:51:07.545" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210707 14:51:07.545" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210707 14:51:04.992" endtime="20210707 14:51:07.567"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id:mce_0_ifr</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210707 14:51:07.569" level="INFO">Selecting frame 'id:mce_0_ifr'.</msg>
+<status status="PASS" starttime="20210707 14:51:07.568" endtime="20210707 14:51:07.713"/>
+</kw>
+<kw name="Current Frame Should Contain" library="SeleniumLibrary">
+<arg>Your content goes here.</arg>
+<doc>Verifies that the current frame contains ``text``.</doc>
+<msg timestamp="20210707 14:51:07.745" level="INFO">Current frame contains text 'Your content goes here.'.</msg>
+<status status="PASS" starttime="20210707 14:51:07.713" endtime="20210707 14:51:07.745"/>
+</kw>
+<kw name="Current Frame Should Not Contain" library="SeleniumLibrary">
+<arg>not here</arg>
+<doc>Verifies that the current frame does not contain ``text``.</doc>
+<msg timestamp="20210707 14:51:07.778" level="INFO">Current frame did not contain text 'not here'.</msg>
+<status status="PASS" starttime="20210707 14:51:07.745" endtime="20210707 14:51:07.778"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210707 14:51:07.778" endtime="20210707 14:51:07.786"/>
+</kw>
+<kw name="Frame Should Contain" library="SeleniumLibrary">
+<arg>id:mce_0_ifr</arg>
+<arg>Your content goes here.</arg>
+<doc>Verifies that frame identified by ``locator`` contains ``text``.</doc>
+<msg timestamp="20210707 14:51:07.839" level="INFO">Searching for text from frame 'id:mce_0_ifr'.</msg>
+<msg timestamp="20210707 14:51:07.865" level="INFO">Frame 'id:mce_0_ifr' contains text 'Your content goes here.'.</msg>
+<status status="PASS" starttime="20210707 14:51:07.786" endtime="20210707 14:51:07.866"/>
+</kw>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:51:07.867" endtime="20210707 14:51:10.499"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:07.866" endtime="20210707 14:51:10.500"/>
+</kw>
+<status status="PASS" starttime="20210707 14:50:49.124" endtime="20210707 14:51:10.500"/>
+</test>
+<status status="PASS" starttime="20210707 14:50:49.110" endtime="20210707 14:51:10.502"/>
+</suite>
+<suite id="s1-s4" name="TC04HandlingAlert" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC04HandlingAlert.robot">
+<test id="s1-s4-t1" name="TC04 handling alert">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:51:10.529" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7C6C1C0&gt;</msg>
+<status status="PASS" starttime="20210707 14:51:10.528" endtime="20210707 14:51:10.529"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:10.530" endtime="20210707 14:51:10.530"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:10.530" endtime="20210707 14:51:10.531"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:10.531" endtime="20210707 14:51:10.533"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:10.533" endtime="20210707 14:51:10.534"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:51:10.536" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:51:10.535" endtime="20210707 14:51:12.155"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:10.534" endtime="20210707 14:51:12.155"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:51:12.156" level="INFO">Opening url 'https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert'</msg>
+<status status="PASS" starttime="20210707 14:51:12.155" endtime="20210707 14:51:17.321"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:10.527" endtime="20210707 14:51:17.322"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>id:iframeResult</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210707 14:51:17.323" level="INFO">Selecting frame 'id:iframeResult'.</msg>
+<status status="PASS" starttime="20210707 14:51:17.323" endtime="20210707 14:51:17.475"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//button[@onclick='myFunction()']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210707 14:51:17.476" level="INFO">Clicking button '//button[@onclick='myFunction()']'.</msg>
+<status status="PASS" starttime="20210707 14:51:17.475" endtime="20210707 14:51:17.737"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210707 14:51:22.739" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210707 14:51:17.738" endtime="20210707 14:51:22.739"/>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<arg>accept</arg>
+<arg>timeout= 2s</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<msg timestamp="20210707 14:51:22.739" level="INFO">HANDLE::&lt;class 'datetime.timedelta'&gt;::0:00:02</msg>
+<status status="PASS" starttime="20210707 14:51:22.739" endtime="20210707 14:51:22.750"/>
+</kw>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:51:22.751" endtime="20210707 14:51:25.381"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:22.750" endtime="20210707 14:51:25.383"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:10.526" endtime="20210707 14:51:25.383"/>
+</test>
+<status status="PASS" starttime="20210707 14:51:10.504" endtime="20210707 14:51:25.384"/>
+</suite>
+<suite id="s1-s5" name="TC05explicitwait" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC05explicitwait.robot">
+<test id="s1-s5-t1" name="explicit wait explaination">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:51:25.419" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7C74700&gt;</msg>
+<status status="PASS" starttime="20210707 14:51:25.419" endtime="20210707 14:51:25.419"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:25.420" endtime="20210707 14:51:25.420"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:25.421" endtime="20210707 14:51:25.422"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:25.423" endtime="20210707 14:51:25.425"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:25.425" endtime="20210707 14:51:25.426"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:51:25.429" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:51:25.428" endtime="20210707 14:51:27.904"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:25.427" endtime="20210707 14:51:27.904"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:51:27.905" level="INFO">Opening url 'https://www.sugarcrm.com/au/request-demo/'</msg>
+<status status="PASS" starttime="20210707 14:51:27.905" endtime="20210707 14:51:31.502"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:25.418" endtime="20210707 14:51:31.502"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>The Sugar Platform Suite</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210707 14:51:31.502" endtime="20210707 14:51:31.527"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>xpath://input[@type='submit']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20210707 14:51:31.527" endtime="20210707 14:51:31.550"/>
+</kw>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:51:31.551" endtime="20210707 14:51:34.137"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:31.551" endtime="20210707 14:51:34.137"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:25.416" endtime="20210707 14:51:34.137"/>
+</test>
+<status status="PASS" starttime="20210707 14:51:25.388" endtime="20210707 14:51:34.138"/>
+</suite>
+<suite id="s1-s6" name="TC05handlintimeoutandspeed" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC05handlintimeoutandspeed.robot">
+<test id="s1-s6-t1" name="handing the selenium speed and the timeout">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:51:34.148" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7C7AB20&gt;</msg>
+<status status="PASS" starttime="20210707 14:51:34.148" endtime="20210707 14:51:34.148"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:34.148" endtime="20210707 14:51:34.148"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:34.148" endtime="20210707 14:51:34.149"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:34.149" endtime="20210707 14:51:34.149"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:34.149" endtime="20210707 14:51:34.149"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:51:34.150" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:51:34.149" endtime="20210707 14:51:35.415"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:34.149" endtime="20210707 14:51:35.415"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:51:35.416" level="INFO">Opening url 'https://www.sugarcrm.com/au/request-demo/'</msg>
+<status status="PASS" starttime="20210707 14:51:35.415" endtime="20210707 14:51:39.507"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:34.147" endtime="20210707 14:51:39.507"/>
+</kw>
+<kw name="Get Selenium Timeout" library="SeleniumLibrary">
+<var>${genrictimeout}</var>
+<doc>Gets the timeout that is used by various keywords.</doc>
+<msg timestamp="20210707 14:51:39.508" level="INFO">${genrictimeout} = 5 seconds</msg>
+<status status="PASS" starttime="20210707 14:51:39.508" endtime="20210707 14:51:39.508"/>
+</kw>
+<kw name="Get Selenium Speed" library="SeleniumLibrary">
+<var>${genricspeed}</var>
+<doc>Gets the delay that is waited after each Selenium command.</doc>
+<msg timestamp="20210707 14:51:39.509" level="INFO">${genricspeed} = 0 seconds</msg>
+<status status="PASS" starttime="20210707 14:51:39.508" endtime="20210707 14:51:39.509"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>4s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20210707 14:51:39.509" endtime="20210707 14:51:39.509"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>//div[@id='field9']/div/input</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20210707 14:51:39.509" endtime="20210707 14:51:47.867"/>
+</kw>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:51:47.868" endtime="20210707 14:51:53.929"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:47.867" endtime="20210707 14:51:53.929"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:34.147" endtime="20210707 14:51:53.929"/>
+</test>
+<status status="PASS" starttime="20210707 14:51:34.139" endtime="20210707 14:51:53.929"/>
+</suite>
+<suite id="s1-s7" name="TC06IF ELSE implementation" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC06IF_ELSE_implementation.robot">
+<test id="s1-s7-t1" name="IF else implementation">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:51:53.943" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7C89730&gt;</msg>
+<status status="PASS" starttime="20210707 14:51:53.943" endtime="20210707 14:51:53.943"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:53.943" endtime="20210707 14:51:53.943"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:53.944" endtime="20210707 14:51:53.944"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:53.944" endtime="20210707 14:51:53.944"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:53.944" endtime="20210707 14:51:53.944"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:51:53.945" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:51:53.945" endtime="20210707 14:51:55.277"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:53.945" endtime="20210707 14:51:55.278"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:51:55.278" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20210707 14:51:55.278" endtime="20210707 14:51:55.691"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:53.943" endtime="20210707 14:51:55.692"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id='user-name']</arg>
+<arg>standard_user</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:51:55.692" level="INFO">Typing text 'standard_user' into text field '//input[@id='user-name']'.</msg>
+<status status="PASS" starttime="20210707 14:51:55.692" endtime="20210707 14:51:55.950"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@id='password']</arg>
+<arg>secret_sauce</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210707 14:51:55.950" level="INFO">Typing text 'secret_sauce' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20210707 14:51:55.950" endtime="20210707 14:51:56.159"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>//input[@id='login-button']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20210707 14:51:56.160" level="INFO">Clicking button '//input[@id='login-button']'.</msg>
+<status status="PASS" starttime="20210707 14:51:56.159" endtime="20210707 14:51:56.326"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${elementcount}</var>
+<arg>//div[@class='inventory_list']/div</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210707 14:51:56.399" level="INFO">${elementcount} = 6</msg>
+<status status="PASS" starttime="20210707 14:51:56.327" endtime="20210707 14:51:56.399"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${elementcount}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:51:56.399" endtime="20210707 14:51:56.399"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${elementcount} == 10</arg>
+<arg>Test Keyword1</arg>
+<arg>ELSE IF</arg>
+<arg>${elementcount} &gt; 10</arg>
+<arg>Test Keyword2</arg>
+<arg>ELSE</arg>
+<arg>Test Keyword3</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Test Keyword3">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Its passed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:51:56.400" endtime="20210707 14:51:56.401"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:56.400" endtime="20210707 14:51:56.401"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:56.400" endtime="20210707 14:51:56.401"/>
+</kw>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:51:56.401" endtime="20210707 14:51:59.019"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:56.401" endtime="20210707 14:51:59.020"/>
+</kw>
+<tag>IFELSELOOP</tag>
+<status status="PASS" starttime="20210707 14:51:53.942" endtime="20210707 14:51:59.020"/>
+</test>
+<status status="PASS" starttime="20210707 14:51:53.931" endtime="20210707 14:51:59.021"/>
+</suite>
+<suite id="s1-s8" name="TC07combination IF ELSE&amp;FORLOOP" source="C:\Users\egervin\PycharmProjects\robotpractice\testcases\TC07combination_IF_ELSE&amp;FORLOOP.robot">
+<test id="s1-s8-t1" name="If else loop combination with for loop">
+<kw name="Test case start" library="keyword" type="SETUP">
+<arg>${url}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210707 14:51:59.041" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000290C7C84AF0&gt;</msg>
+<status status="PASS" starttime="20210707 14:51:59.040" endtime="20210707 14:51:59.041"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:59.041" endtime="20210707 14:51:59.041"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--ignore-certificate-errors</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:59.041" endtime="20210707 14:51:59.041"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:59.041" endtime="20210707 14:51:59.042"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20210707 14:51:59.042" endtime="20210707 14:51:59.042"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>os.sep == '/'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<arg>executable_path=C:\driver</arg>
+<arg>ELSE</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>my_alias</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20210707 14:51:59.042" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20210707 14:51:59.042" endtime="20210707 14:52:00.321"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:59.042" endtime="20210707 14:52:00.321"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210707 14:52:00.321" level="INFO">Opening url 'https://rahulshettyacademy.com/AutomationPractice/'</msg>
+<status status="PASS" starttime="20210707 14:52:00.321" endtime="20210707 14:52:05.770"/>
+</kw>
+<status status="PASS" starttime="20210707 14:51:59.040" endtime="20210707 14:52:05.770"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{checkboxs}</var>
+<arg>//input[@type='checkbox']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20210707 14:52:05.792" level="INFO">@{checkboxs} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="eae917226de28f04d7cac5ffdae56f7e", element="0fb416a6-2355-452c-94c4-3f10d73ba293")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" starttime="20210707 14:52:05.770" endtime="20210707 14:52:05.792"/>
+</kw>
+<for flavor="IN">
+<var>${uniquecheckbox}</var>
+<value>@{checkboxs}</value>
+<iter>
+<var name="${uniquecheckbox}">&lt;selenium.webdriver.remote.webelement.WebElement (session="eae917226de28f04d7cac5ffdae56f7e", element="0fb416a6-2355-452c-94c4-3f10d73ba293")&gt;</var>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${uniquecheckbox}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:52:05.807" level="INFO">${text} = option1</msg>
+<status status="PASS" starttime="20210707 14:52:05.793" endtime="20210707 14:52:05.807"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${text1}</var>
+<arg>${text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210707 14:52:05.808" level="INFO">${text1} = option1</msg>
+<status status="PASS" starttime="20210707 14:52:05.807" endtime="20210707 14:52:05.808"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:52:05.808" endtime="20210707 14:52:05.808"/>
+</kw>
+<status status="PASS" starttime="20210707 14:52:05.793" endtime="20210707 14:52:05.808"/>
+</iter>
+<iter>
+<var name="${uniquecheckbox}">&lt;selenium.webdriver.remote.webelement.WebElement (session="eae917226de28f04d7cac5ffdae56f7e", element="ec59a849-5d41-44dc-84ca-ca371bba4121")&gt;</var>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${uniquecheckbox}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:52:05.821" level="INFO">${text} = option2</msg>
+<status status="PASS" starttime="20210707 14:52:05.808" endtime="20210707 14:52:05.821"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${text1}</var>
+<arg>${text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210707 14:52:05.822" level="INFO">${text1} = option2</msg>
+<status status="PASS" starttime="20210707 14:52:05.821" endtime="20210707 14:52:05.822"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:52:05.822" endtime="20210707 14:52:05.822"/>
+</kw>
+<status status="PASS" starttime="20210707 14:52:05.808" endtime="20210707 14:52:05.822"/>
+</iter>
+<iter>
+<var name="${uniquecheckbox}">&lt;selenium.webdriver.remote.webelement.WebElement (session="eae917226de28f04d7cac5ffdae56f7e", element="4a2abbaa-1585-4956-9fbc-cb4600e4db99")&gt;</var>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${uniquecheckbox}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20210707 14:52:05.837" level="INFO">${text} = option3</msg>
+<status status="PASS" starttime="20210707 14:52:05.823" endtime="20210707 14:52:05.837"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${text1}</var>
+<arg>${text}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20210707 14:52:05.837" level="INFO">${text1} = option3</msg>
+<status status="PASS" starttime="20210707 14:52:05.837" endtime="20210707 14:52:05.837"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${text1}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210707 14:52:05.837" endtime="20210707 14:52:05.838"/>
+</kw>
+<status status="PASS" starttime="20210707 14:52:05.823" endtime="20210707 14:52:05.838"/>
+</iter>
+<status status="PASS" starttime="20210707 14:52:05.792" endtime="20210707 14:52:05.838"/>
+</for>
+<kw name="Test case end" library="keyword" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210707 14:52:05.838" endtime="20210707 14:52:08.450"/>
+</kw>
+<status status="PASS" starttime="20210707 14:52:05.838" endtime="20210707 14:52:08.450"/>
+</kw>
+<tag>SugarCRMDEMOPAGE</tag>
+<status status="PASS" starttime="20210707 14:51:59.040" endtime="20210707 14:52:08.450"/>
+</test>
+<status status="PASS" starttime="20210707 14:51:59.022" endtime="20210707 14:52:08.451"/>
+</suite>
+<status status="PASS" starttime="20210707 14:50:20.435" endtime="20210707 14:52:08.452"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">IFELSELOOP</stat>
+<stat pass="2" fail="0" skip="0">SugarCRMDEMOPAGE</stat>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="TC01Verifytestcase">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC01Verifytestcase</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s2" name="TC02SugarCRMgetdemopage">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC02SugarCRMgetdemopage</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="TC03Frames">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC03Frames</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="TC04HandlingAlert">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC04HandlingAlert</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s5" name="TC05explicitwait">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC05explicitwait</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s6" name="TC05handlintimeoutandspeed">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC05handlintimeoutandspeed</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s7" name="TC06IF ELSE implementation">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC06IF ELSE implementation</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s8" name="TC07combination IF ELSE&amp;FORLOOP">TC01Verifytestcase &amp; TC02SugarCRMgetdemopage &amp; TC03Frames &amp; TC04HandlingAlert &amp; TC05explicitwait &amp; TC05handlintimeoutandspeed &amp; TC06IF ELSE implementation &amp; TC07combination IF ELSE&amp;FORLOOP.TC07combination IF ELSE&amp;FORLOOP</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
